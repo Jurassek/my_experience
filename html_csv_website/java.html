@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>JavaScript</title>
+        <script>
+            function randInt(m, n) {
+		        return Math.round(Math.random()*(n-m))+m;
+            }
+    
+            function arrGen(n) {
+                var tab = []
+    	        for (var i=0; i<n; i++)
+    	            tab[i] = randInt(-100, 100);
+    	        return tab
+            }
+    
+            function arrAvg(tab) {
+                var suma = 0.0;
+                for (var i=0; i<tab.length; i++)
+                    suma+= tab[i];
+                return suma/tab.length
+            }
+            
+        </script>
+    </head>
+    <body bgcolor=#ffe4dc>
+        <script>
+            document.write(randInt(-10,10)+'<br/>')
+            document.write(arrGen(20)+'<br/>')
+            document.write(arrGen(30)+'<br/><br/><br/>')
+            
+            var t1 = arrGen(10);
+            var avg1 = arrAvg(t1)
+            var t2 = arrGen(20);
+            var avg2 = arrAvg(t2)
+            var t3 = arrGen(30);
+            var avg3 = arrAvg(t3)
+            
+            document.write('<br/><br/>')
+            document.write('Tablica 1: ' +t1+'<br/>');
+            document.write('Średnia 1: ' +avg1+'<br/>')
+            document.write('Tablica 2: ' +t2+'<br/>');
+            document.write('Średnia 2: ' +avg2+'<br/>')
+            document.write('Tablica 3: ' +t3+'<br/>');
+            document.write('Średnia 3: ' +avg3+'<br/>')
+            
+            document.write('<br/><br/>')
+            document.write('Suma wszystkich średnich: ' +(avg1+avg2+avg3)+ '<br/>')
+            document.write('<br/><br/>')
+            
+        </script>
+        
+        <a href="index.html">Powrót do strony głównej</a>
+    </body>
+</html>

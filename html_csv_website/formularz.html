@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Formularz</title>
+        <style>
+        div {
+            border: 1px solid black;
+            background-color: darkgrey;
+            width: 500px;
+            height: 250px;
+        }
+        </style>
+        <script>
+            function oblicz(){
+                var x0 = parseFloat(document.forms[0].elements['x0'].value);
+                var y0 = parseFloat(document.forms[0].elements['y0'].value);
+                var x1 = parseFloat(document.forms[0].elements['x1'].value);
+                var y1 = parseFloat(document.forms[0].elements['y1'].value);
+                var x2 = parseFloat(document.forms[0].elements['x2'].value);
+                var y2 = parseFloat(document.forms[0].elements['y2'].value);
+                var P0P1 = Math.sqrt(Math.pow((x1-x0),2)+Math.pow((y1-y0),2));  
+                var P0P2 = Math.sqrt(Math.pow((x2-x0),2)+Math.pow((y2-y0),2)); 
+                var P1P2 = Math.sqrt(Math.pow((x2-x1),2)+Math.pow((y2-y1),2));
+                var katrad = Math.acos((P0P2*P0P2+P0P1*P0P1-P1P2*P1P2)/(2*P0P2*P0P1))
+                var katdeg = katrad * (180/Math.PI)
+                
+                document.getElementById('wynik').innerHTML = 'Współrzędne <br/>' +
+                    'P0('+x0+', '+y0+') <br/>' +
+                    'P1('+x1+', '+y1+') <br/>' +
+                    'P2('+x2+', '+y2+') <br/>' +
+                    'Długośc wektora P0P1: '+P0P1+' <br/>' + 
+                    'Długośc wektora P0P2: '+P0P2+' <br/>' +
+                    'Długośc wektora P1P2: '+P1P2+' <br/>' +
+                    'Kąt P1P0P2 (rad):'+katrad+' <br/>' +
+                    'Kąt P1P0P2 (deg):'+katdeg+' <br/>';
+            }
+        </script>
+    </head>
+    
+    <body bgcolor=#ffe4dc>
+        <form name="obliczenia">
+            P0 (<input name="x0" type="text" value="0.0">, <input name="y0" type="text" value="0.0">)<br/>
+            P1 (<input name="x1" type="text" value="0.0">, <input name="y1" type="text" value="0.0">)<br/>
+            P2 (<input name="x2" type="text" value="0.0">, <input name="y2" type="text" value="0.0">)<br/><br/>
+            <div id="wynik"></div><br/>
+            <input type="button" value="Oblicz" onclick="oblicz()">
+        </form>
+        <br/><br/><br/>
+        <a href="index.html">Powrót do strony głównej</a>
+    </body>
+</html>

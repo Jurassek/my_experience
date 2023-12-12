@@ -1,0 +1,34 @@
+<html>
+    
+<head>
+
+<title>Mapa statyczna</title>
+
+</head>
+    
+<body>
+       
+<div>
+    <a>Moje wymarzone wakacje: </a><br/><br/>
+    <input type="button" value="Dubaj" onclick=show(1)><br/><br/>
+    <input type="button" value="Tokio" onclick=show(2)><br/><br/>
+    <input type="button" value="Oslo" onclick=show(3)><br/><br/>
+</div>
+
+<img id="image" width="512" height="512" src="https://maps.googleapis.com/maps/api/staticmap?center=Wroclaw,Poland&zoom=11&size=512x512&key=AIzaSyCCwmLXuQo0nKPAX3KfpOTbYtBhbMaEwmo" /> 
+
+<script>
+    function show(location) {
+        if (location == 1)
+        document.getElementById('image').src = "https://maps.googleapis.com/maps/api/staticmap?center=Dubai,UniitedArabEmirates&zoom=11&size=512x512&key=AIzaSyCCwmLXuQo0nKPAX3KfpOTbYtBhbMaEwmo";
+        else if (location == 2)
+        document.getElementById('image').src = "https://maps.googleapis.com/maps/api/staticmap?center=Tokio,Japan&zoom=11&size=512x512&key=AIzaSyCCwmLXuQo0nKPAX3KfpOTbYtBhbMaEwmo";
+        else if (location == 3)
+        document.getElementById('image').src = "https://maps.googleapis.com/maps/api/staticmap?center=Oslo,Norway=11&size=512x512&key=AIzaSyCCwmLXuQo0nKPAX3KfpOTbYtBhbMaEwmo";
+    }
+    
+</script>
+
+</body> 
+
+</html>

@@ -1,0 +1,52 @@
+<html>
+    
+<head>
+    <title>Mapa dynamiczna</title>
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+</head>
+    
+<body>
+    
+<script>
+var location1 = {lat: 24.6634526, lng: 54.77945892};
+var location2 = {lat: 35.6682437, lng: 139.7408677};
+var location3 = {lat: 59.8938549, lng: 10.78511651};
+</script>
+    
+<div>
+    <a>Moje wymarzone wakacje: </a><br/><br/>
+    <input type="button" value="Dubaj" onclick="initMap(location1)"><br/><br/>
+    <input type="button" value="Tokio" onclick="initMap(location2)"><br/><br/>
+    <input type="button" value="Oslo" onclick="initMap(location3)"><br/><br/>
+</div>
+    
+<div id="map"></div>
+
+<script>
+    function initMap(location) {
+        var map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 10,
+            scale: 1,
+            center: location,
+            mapTypeId: 'roadmap',
+        });
+        
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map,
+            animation: google.maps.Animation.BOUNCE
+        });
+    }
+    
+</script>
+    
+<script async defer src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCCwmLXuQo0nKPAX3KfpOTbYtBhbMaEwmo&callback=myMap"></script>
+
+</body>
+    
+</html>
